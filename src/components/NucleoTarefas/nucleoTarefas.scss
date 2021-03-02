@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Future;
+  src: url('../../assets/fonts/FUTUI___.TTF');
+}
 .nucleo {
   display: flex;
   width: 82%;
@@ -29,5 +33,9 @@
   }
   .welcome {
     margin: 0 0 0 20px;
+    font-family: Future;
+    font-size: 60px;
+    width: 100%;
+    text-align: left;
   }
 }

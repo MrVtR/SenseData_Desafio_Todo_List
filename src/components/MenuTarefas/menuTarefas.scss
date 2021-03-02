@@ -1,11 +1,16 @@
+@font-face {
+  font-family: Retro;
+  src: url('../../assets/fonts/RetroRemembers-8Ma0g.ttf');
+}
 .menuTarefas {
   background-color: #e9eef6;
   width: 12vw;
   .Header {
+    font-family: Retro;
     background-color: #e3eaf5;
     border-bottom: 1px solid #e0e6f0;
     height: 7vh;
     margin: 0;
-    padding-top: 15px;
+    padding: 5px 10px 15px 10px;
   }
 }
