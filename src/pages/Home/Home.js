@@ -1,10 +1,11 @@
 import './Home.scss';
-import MenuBar from '../../components/Menu/menu';
+import { Menu, MenuTarefas } from '../../services/export';
 function Home() {
   console.log('Home');
   return (
     <div className="Home">
-      <MenuBar />
+      <Menu />
+      <MenuTarefas />
     </div>
   );
 }
