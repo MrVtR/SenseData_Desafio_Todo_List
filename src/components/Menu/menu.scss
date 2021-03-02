@@ -4,4 +4,20 @@
   margin-left: 3px;
   width: 90px;
   border-radius: 20px 0px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    border-bottom: 1px solid #2d74dc;
+    height: 7vh;
+    margin: 0;
+    padding-top: 15px;
+  }
+  .img {
+    margin-top: 15px;
+  }
+  #sair {
+    border-top: 1px solid #2d74dc;
+    margin-top: 70vh;
+  }
 }
