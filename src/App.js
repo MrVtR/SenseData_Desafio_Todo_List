@@ -1,5 +1,5 @@
-import Home from './pages/Home/index';
-import AddTask from './pages/AddTask/index';
+import Home from './pages/Home/Home';
+import AddTask from './pages/AddTask/AddTask';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
