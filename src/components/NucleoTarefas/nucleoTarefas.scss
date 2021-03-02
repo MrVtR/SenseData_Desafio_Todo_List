@@ -1,0 +1,16 @@
+.nucleo {
+  display: flex;
+  width: 84%;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 10px;
+  .profile {
+    width: 70px;
+    border-radius: 50%;
+  }
+  .X {
+    align-self: flex-start;
+    margin-left: 20px;
+  }
+}
