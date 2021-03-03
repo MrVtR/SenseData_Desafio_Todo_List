@@ -4,7 +4,7 @@ export default function menuTarefas() {
   return (
     <div className="menuTarefas">
       <h1 className="Header">Lista de Tarefas</h1>
-      <ContadorTarefas name="Todas as Tarefas" background="#172b4d" cont="10" />
+      <ContadorTarefas name="Outras Tarefas" background="#172b4d" cont="10" />
       <ContadorTarefas name="Gerência" background="#1665d8" cont="10" />
       <ContadorTarefas name="Vendas" background="#f6c056" cont="10" />
       <ContadorTarefas name="Operações" background="#f85252" cont="10" />

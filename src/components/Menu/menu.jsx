@@ -14,6 +14,10 @@ export default function Menu() {
         className="img"
         id="sair"
         alt="Sair"
+        onClick={() => {
+          alert('Saindo do aplicativo, até mais.');
+          window.location.reload();
+        }}
       />
     </div>
   );

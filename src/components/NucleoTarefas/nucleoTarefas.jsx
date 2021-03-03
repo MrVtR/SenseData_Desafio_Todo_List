@@ -3,10 +3,6 @@ import profile from '../../assets/icons/profile.jpg';
 import ContainerTarefa from '../ContainerTarefa/containerTarefa';
 import { useEffect, useState } from 'react';
 
-const container = {
-  tipo: 'Gerência',
-  descricao: 'Gerenciar Tarefas',
-};
 export default function Menu() {
   const [itens, setItens] = useState([]);
   useEffect(() => {
