@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const container = {
   tipo: 'Gerência',
-  descricao: 'teste',
+  descricao: 'Gerenciar Tarefas',
 };
 export default function Menu() {
   const [itens, setItens] = useState([]);
@@ -20,9 +20,7 @@ export default function Menu() {
             className="img"
             id="add"
             alt="Adicionar"
-            onClick={() => {
-              setItens((arrayAntigo) => [...arrayAntigo, container]);
-            }}
+            onClick={openForm}
           />
           <img
             src={profile}
@@ -32,6 +30,49 @@ export default function Menu() {
           ></img>
         </header>
         <div className="containerTable" id="table">
+          <div>
+            <form id="form">
+              <label htmlFor="tipo">
+                <b>Tipo da Tarefa</b>
+              </label>
+              <input
+                id="tipo"
+                type="text"
+                placeholder="Digite o tipo da Tarefa"
+                name="tipo"
+                required
+              />
+              <label htmlFor="descricao">
+                <b>Descrição da Tarefa</b>
+              </label>
+              <input
+                id="descricao"
+                type="text"
+                placeholder="Digite a descrição da Tarefa"
+                name="descricao"
+                required
+              />
+              <button
+                type="button"
+                className="btn"
+                onClick={() => {
+                  closeForm();
+                  setItens((arrayAntigo) => [
+                    ...arrayAntigo,
+                    {
+                      tipo: document.getElementById('tipo').value,
+                      descricao: document.getElementById('descricao').value,
+                    },
+                  ]);
+                }}
+              >
+                Inserir
+              </button>
+              <button type="button" className="btn cancel" onClick={closeForm}>
+                Cancelar
+              </button>
+            </form>
+          </div>
           {itens.map((item, index) => (
             <ContainerTarefa key={index} id={index} item={item} />
           ))}
@@ -39,4 +80,11 @@ export default function Menu() {
       </div>
     </>
   );
+}
+
+function openForm() {
+  document.getElementById('form').style.display = 'block';
+}
+function closeForm() {
+  document.getElementById('form').style.display = 'none';
 }
