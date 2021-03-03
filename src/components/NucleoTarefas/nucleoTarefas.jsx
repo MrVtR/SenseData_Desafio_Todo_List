@@ -4,11 +4,15 @@ import ContainerTarefa from '../ContainerTarefa/containerTarefa';
 import { useEffect, useState } from 'react';
 
 export default function Menu() {
+  const storage = () =>
+    Array.from(JSON.parse(localStorage.getItem('itens') || []));
+  // const [itens, setItens] = useState([storage]);
   const [itens, setItens] = useState([]);
+
   useEffect(() => {
     localStorage.setItem('itens', JSON.stringify(itens));
   }, [itens]);
-  const storage = Array.from(JSON.parse(localStorage.getItem('itens')));
+
   return (
     <>
       <div className="nucleo">

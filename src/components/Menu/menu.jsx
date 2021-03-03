@@ -16,7 +16,6 @@ export default function Menu() {
         alt="Sair"
         onClick={() => {
           alert('Saindo do aplicativo, até mais.');
-          window.location.reload();
         }}
       />
     </div>
