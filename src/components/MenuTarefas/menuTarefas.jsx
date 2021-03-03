@@ -1,6 +1,6 @@
 import './menuTarefas.scss';
 import { ContadorTarefas } from '../../services/export';
-function menuTarefas() {
+export default function menuTarefas() {
   return (
     <div className="menuTarefas">
       <h1 className="Header">Lista de Tarefas</h1>
@@ -19,4 +19,3 @@ function menuTarefas() {
     </div>
   );
 }
-export default menuTarefas;

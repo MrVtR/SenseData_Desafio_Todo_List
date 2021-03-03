@@ -1,5 +1,6 @@
 import './menu.scss';
-function Menu() {
+
+export default function Menu() {
   return (
     <div className="menuBar">
       <header className="header">
@@ -9,12 +10,6 @@ function Menu() {
         />
       </header>
       <img
-        src="https://img.icons8.com/wired/64/000000/plus.png"
-        className="img"
-        id="add"
-        alt="Adicionar"
-      />
-      <img
         src="https://img.icons8.com/plasticine/100/000000/close-window.png"
         className="img"
         id="sair"
@@ -23,4 +18,3 @@ function Menu() {
     </div>
   );
 }
-export default Menu;

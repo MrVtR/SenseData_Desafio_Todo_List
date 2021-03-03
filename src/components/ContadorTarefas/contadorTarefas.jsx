@@ -1,7 +1,6 @@
 import './contadorTarefas.scss';
 export default function ContadorTarefas(props) {
   const { name, background, cont } = props;
-  console.log(background, name);
   return (
     <div className="contador">
       <h3 className="name">{name}</h3>
