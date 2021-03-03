@@ -1,7 +1,7 @@
 import './nucleoTarefas.scss';
 import profile from '../../assets/icons/profile.jpg';
 import ContainerTarefa from '../ContainerTarefa/containerTarefa';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const container = {
   tipo: 'Gerência',
@@ -9,7 +9,10 @@ const container = {
 };
 export default function Menu() {
   const [itens, setItens] = useState([]);
-
+  useEffect(() => {
+    localStorage.setItem('itens', JSON.stringify(itens));
+  }, [itens]);
+  const storage = Array.from(JSON.parse(localStorage.getItem('itens')));
   return (
     <>
       <div className="nucleo">
@@ -29,34 +32,38 @@ export default function Menu() {
             id="profile"
           ></img>
         </header>
-        <div className="containerTable" id="table">
-          <div>
-            <form id="form">
-              <label htmlFor="tipo">
-                <b>Tipo da Tarefa</b>
-              </label>
-              <input
-                id="tipo"
-                type="text"
-                placeholder="Digite o tipo da Tarefa"
-                name="tipo"
-                required
-              />
-              <label htmlFor="descricao">
-                <b>Descrição da Tarefa</b>
-              </label>
-              <input
-                id="descricao"
-                type="text"
-                placeholder="Digite a descrição da Tarefa"
-                name="descricao"
-                required
-              />
-              <button
-                type="button"
-                className="btn"
-                onClick={() => {
-                  closeForm();
+        <div id="formDiv">
+          <form id="form">
+            <label htmlFor="tipo">
+              <b>Tipo da Tarefa</b>
+            </label>
+            <input
+              id="tipo"
+              type="text"
+              placeholder="Digite o tipo da Tarefa"
+              name="tipo"
+              required
+            />
+            <label htmlFor="descricao">
+              <b>Descrição da Tarefa</b>
+            </label>
+            <input
+              id="descricao"
+              type="text"
+              placeholder="Digite a descrição da Tarefa"
+              name="descricao"
+              required
+            />
+            <button
+              type="button"
+              className="btn"
+              onClick={() => {
+                if (
+                  document.getElementById('tipo').value === '' ||
+                  document.getElementById('descricao').value === ''
+                )
+                  alert('Preencha todos os campos por favor.');
+                else {
                   setItens((arrayAntigo) => [
                     ...arrayAntigo,
                     {
@@ -64,15 +71,21 @@ export default function Menu() {
                       descricao: document.getElementById('descricao').value,
                     },
                   ]);
-                }}
-              >
-                Inserir
-              </button>
-              <button type="button" className="btn cancel" onClick={closeForm}>
-                Cancelar
-              </button>
-            </form>
-          </div>
+                  // localStorage.setItem('itens', JSON.stringify(itens));
+                  // console.log(JSON.parse(localStorage.getItem('itens')));
+                  // console.log(itens);
+                  closeForm();
+                }
+              }}
+            >
+              Inserir
+            </button>
+            <button type="button" className="btn cancel" onClick={closeForm}>
+              Cancelar
+            </button>
+          </form>
+        </div>
+        <div className="containerTable" id="table">
           {itens.map((item, index) => (
             <ContainerTarefa key={index} id={index} item={item} />
           ))}
@@ -83,8 +96,8 @@ export default function Menu() {
 }
 
 function openForm() {
-  document.getElementById('form').style.display = 'block';
+  document.getElementById('formDiv').style.display = 'flex';
 }
 function closeForm() {
-  document.getElementById('form').style.display = 'none';
+  document.getElementById('formDiv').style.display = 'none';
 }
